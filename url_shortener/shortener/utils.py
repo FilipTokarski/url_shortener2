@@ -1,11 +1,8 @@
 import string
 import random
 
+ALPHANUMERIC_CHARS = string.ascii_lowercase + string.digits
+STRING_LENGTH = 8
 
-def generate_random_url(length=4):
-    random_letters = list(random.choice(string.ascii_letters) for i in range(length))
-    random_numbers = random.sample(range(100), length)
-    zipped = zip(random_letters, random_numbers)
-    random_list = [str(c) for element in zipped for c in element]
-    full_string = ''.join(random_list)
-    return full_string
+def generate_random_string(chars=ALPHANUMERIC_CHARS, length=STRING_LENGTH):
+    return ''.join(random.choice(chars) for _ in range(length))
