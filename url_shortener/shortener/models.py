@@ -1,5 +1,5 @@
 from django.db import models
-from .utils import generate_random_url
+from .utils import generate_random_string
 
 class UrlModel(models.Model):
     original_url = models.URLField(verbose_name='Provide url here:')
@@ -9,7 +9,7 @@ class UrlModel(models.Model):
 
     # On submit create shortened slug and full redirect url
     def save(self, *args, **kwargs):
-        new_slug = generate_random_url()
+        new_slug = generate_random_string()
         new_url = 'https://ftdevprojects.pl/'+new_slug
         
         self.shortened_url = new_url
