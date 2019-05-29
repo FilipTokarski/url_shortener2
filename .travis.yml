@@ -4,6 +4,8 @@ python:
 env:
   - DJANGO=2.2 DB=sqlite
 cache: pip
+before_install:
+  - sudo apt-get install sqlite3=3.8.3
 install:
   - pip install -r requirements.txt
 script:
