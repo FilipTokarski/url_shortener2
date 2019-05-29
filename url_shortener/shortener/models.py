@@ -10,7 +10,8 @@ class UrlModel(models.Model):
     # On submit create shortened slug and full redirect url
     def save(self, *args, **kwargs):
         new_slug = generate_random_string()
-        new_url = 'https://ftdevprojects.pl/'+new_slug
+        #new_url = 'https://ftdevprojects.pl/'+new_slug
+        new_url = 'http://localhost:8000/'+new_slug
         
         self.shortened_url = new_url
         self.url_slug = new_slug
