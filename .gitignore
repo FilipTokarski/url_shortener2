@@ -1,1 +1,14 @@
 .vscode
+env
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media
+.coverage
+.coverage.*
+*.cover
+migrations
+.DS_Store
